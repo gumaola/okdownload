@@ -6,10 +6,10 @@ android {
     namespace = "com.liulishuo.okdownload.sample"
     compileSdk rootProject.ext.compileSdkVersion
 
-    compileOptions {
-        sourceCompatibility rootProject.ext.sourceCompatibilityVersion
-        targetCompatibility JavaVersion.VERSION_11
-    }
+	compileOptions {
+		sourceCompatibility rootProject.ext.sourceCompatibilityVersion
+		targetCompatibility rootProject.ext.targetCompatibilityVersion
+	}
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11

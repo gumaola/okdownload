@@ -5,10 +5,10 @@ android {
     namespace = "com.liulishuo.okdownload.process"
     compileSdk rootProject.ext.compileSdkVersion
 
-    compileOptions {
-        sourceCompatibility rootProject.ext.sourceCompatibilityVersion
-        targetCompatibility JavaVersion.VERSION_11
-    }
+	compileOptions {
+		sourceCompatibility rootProject.ext.sourceCompatibilityVersion
+		targetCompatibility rootProject.ext.targetCompatibilityVersion
+	}
 
 	buildTypes {
 		release {
