@@ -1,3 +1,5 @@
+import java.awt.Component
+
 /*
  * Copyright (c) 2018 LingoChamp Inc.
  *
@@ -17,32 +19,42 @@
 apply plugin: 'maven-publish'
 
 task sourceJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier "source"
+	from android.sourceSets.main.java.srcDirs
+	archiveClassifier = "sources"
 }
 
 publishing {
-    publications {
-        okdownload(MavenPublication) {
-            groupId GROUP
-            artifactId POM_ARTIFACT_ID
-            version VERSION_NAME
-            artifact(sourceJar)
-            artifact("$buildDir/outputs/aar/${project.name}-release.aar")
+	publications {
+		release(MavenPublication) {
+			groupId GROUP
+			artifactId POM_ARTIFACT_ID
+			version VERSION_NAME
+			artifact(sourceJar)
+			artifact("$buildDir/outputs/aar/${project.name}-release.aar")
 
-            pom.withXml {
-                def dependenciesNode = asNode().appendNode('dependencies')
-                configurations.compile.allDependencies.each {
-                    if (it.group != null
-                            && (it.name != null || "unspecified" == it.name)
-                            && it.version != null) {
-                        def dependencyNode = dependenciesNode.appendNode('dependency')
-                        dependencyNode.appendNode('groupId', it.group)
-                        dependencyNode.appendNode('artifactId', it.name)
-                        dependencyNode.appendNode('version', it.version)
-                    }
-                }
-            }
-        }
-    }
+			pom {
+				name = POM_NAME
+				packaging POM_PACKAGING
+				description = POM_DESCRIPTION
+				url = POM_URL
+				licenses {
+					license {
+						name = POM_LICENCE_NAME
+						url = POM_LICENCE_URL
+					}
+				}
+				developers {
+					developer {
+						id = POM_DEVELOPER_ID
+						name = POM_DEVELOPER_NAME
+					}
+				}
+				scm {
+					connection = POM_SCM_CONNECTION
+					developerConnection = POM_SCM_DEV_CONNECTION
+					url = POM_SCM_URL
+				}
+			}
+		}
+	}
 }
