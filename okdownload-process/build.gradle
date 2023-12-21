@@ -2,8 +2,8 @@ apply plugin: 'com.android.library'
 
 android {
 
-    namespace = "com.liulishuo.okdownload.process"
-    compileSdk rootProject.ext.compileSdkVersion
+	namespace = "com.liulishuo.okdownload.process"
+	compileSdk rootProject.ext.compileSdkVersion
 
 	compileOptions {
 		sourceCompatibility rootProject.ext.sourceCompatibilityVersion
@@ -16,14 +16,21 @@ android {
 			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 		}
 	}
+	
+	publishing {
+		singleVariant('release') {
+			withSourcesJar()
+			withJavadocJar()
+		}
+	}
 
-    defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-    }
+	defaultConfig {
+		minSdkVersion rootProject.ext.minSdkVersion
+	}
 }
 
 dependencies {
-    testImplementation "junit:junit:4.13.2"
-    testImplementation 'org.mockito:mockito-core:5.8.0'
-    testImplementation 'org.assertj:assertj-core:3.24.2'
+	testImplementation "junit:junit:4.13.2"
+	testImplementation 'org.mockito:mockito-core:5.8.0'
+	testImplementation 'org.assertj:assertj-core:3.24.2'
 }

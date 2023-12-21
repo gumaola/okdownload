@@ -16,6 +16,13 @@ android {
 		}
 	}
 
+	publishing {
+		singleVariant('release') {
+			withSourcesJar()
+			withJavadocJar()
+		}
+	}
+
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
 
