@@ -55,11 +55,11 @@ publishing {
 			groupId GROUP
 			artifactId POM_ARTIFACT_ID
 			version VERSION_NAME
-//			artifact(sourceJar)
-//			artifact("$buildDir/outputs/aar/${project.name}-release.aar")
-			afterEvaluate {
-				from components.release
-			}
+			artifact(sourceJar)
+			artifact("../aars/${project.name}-release.aar")
+//			afterEvaluate {
+//				from components.release
+//			}
 
 			pom {
 				name = POM_NAME
