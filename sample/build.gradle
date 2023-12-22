@@ -23,6 +23,7 @@ android {
 
         versionCode 1
         versionName "1.0"
+		multiDexEnabled true
     }
 
     signingConfigs {
@@ -39,7 +40,6 @@ android {
             signingConfig signingConfigs.release
             minifyEnabled true
             shrinkResources true
-			multiDexEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -52,6 +52,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.10.0'
     //noinspection GradleDependency source code is not available on 26
     implementation 'androidx.appcompat:appcompat:1.6.1'
+	implementation "androidx.multidex:multidex:2.0.1"
 
     // Appcompat-v7 (only Anko Commons)
 //    implementation "org.jetbrains.anko:anko-sdk25:0.10.1"
