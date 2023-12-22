@@ -49,6 +49,14 @@ task sourceJar(type: Jar) {
 	archiveClassifier = "sources"
 }
 
+//afterEvaluate {
+//	println("Copy '${project.name}' aar to shared dir.")
+//	copy {
+//		from "$buildDir/outputs/aar/${project.name}-release.aar"
+//		into "../aars/"
+//	}
+//}
+
 publishing {
 	publications {
 		release(MavenPublication) {
