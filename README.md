@@ -2,11 +2,18 @@
 
 A Reliable, Flexible, Fast and Powerful download engine.
 
-![][okdownload_svg]
-[![][build_status_svg]][build_status_link]
-[![codecov](https://codecov.io/gh/lingochamp/okdownload/branch/master/graph/badge.svg)](https://codecov.io/gh/lingochamp/okdownload)
-[ ![Download](https://api.bintray.com/packages/jacksgong/maven/OkDownload/images/download.svg) ](https://bintray.com/jacksgong/maven/OkDownload/_latestVersion)
-[![][okdownload_snapshot_svg]](https://oss.sonatype.org/content/repositories/snapshots/com/liulishuo/okdownload/)
+## Gradle依赖地址：
+implementation("com.github.gumaola.okdownload:okdownload:1.0.8.1")
+
+implementation("com.github.gumaola.okdownload:sqlite:1.0.8.1")
+
+implementation("com.github.gumaola.okdownload:okhttp:1.0.8.1")
+
+implementation("com.github.gumaola.okdownload:ktx:1.0.8.1")
+
+implementation("com.github.gumaola.okdownload:filedownloader:1.0.8.1")
+
+请先阅读[使用指引](https://github.com/lingochamp/okdownload/wiki/Simple-Use-Guideline)
 
 > [中文文档](https://github.com/lingochamp/okdownload/blob/master/README-zh.md)
 
