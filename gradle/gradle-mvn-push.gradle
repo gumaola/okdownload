@@ -57,6 +57,12 @@ task sourceJar(type: Jar) {
 //	}
 //}
 
+tasks.configureEach {
+	if (it.name.startsWith("publish")) {
+		it.dependsOn("assembleRelease")
+	}
+}
+
 publishing {
 	publications {
 		release(MavenPublication) {
@@ -64,10 +70,7 @@ publishing {
 			artifactId POM_ARTIFACT_ID
 			version VERSION_NAME
 			artifact(sourceJar)
-			artifact("../aars/${project.name}-release.aar")
-//			afterEvaluate {
-//				from components.release
-//			}
+			artifact("$buildDir/outputs/aar/${project.name}-release.aar")
 
 			pom {
 				name = POM_NAME
