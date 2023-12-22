@@ -4,9 +4,13 @@ A Reliable, Flexible, Fast and Powerful download engine.
 
 ## Gradle依赖地址：
 implementation("com.github.gumaola.okdownload:okdownload:1.0.8.1")
+
 implementation("com.github.gumaola.okdownload:sqlite:1.0.8.1")
+
 implementation("com.github.gumaola.okdownload:okhttp:1.0.8.1")
+
 implementation("com.github.gumaola.okdownload:ktx:1.0.8.1")
+
 implementation("com.github.gumaola.okdownload:filedownloader:1.0.8.1")
 
 请先阅读[使用指引](https://github.com/lingochamp/okdownload/wiki/Simple-Use-Guideline)
