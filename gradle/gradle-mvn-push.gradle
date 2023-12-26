@@ -58,7 +58,7 @@ task sourceJar(type: Jar) {
 //}
 
 tasks.configureEach {
-	if (it.name.startsWith("publish")) {
+	if (it instanceof AbstractPublishToMaven) {
 		it.dependsOn("assembleRelease")
 	}
 }
